@@ -1,0 +1,80 @@
+:root {
+    --jpcs-maroon: #8b2316;
+    --jpcs-orange: #f58220;
+    --jpcs-blue: #1b3664;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #222;
+    overflow-x: hidden;
+}
+
+/* Background graphics setup */
+.bg-graphics {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: #fdfdfd;
+}
+
+.geo-square {
+    position: absolute;
+    background: var(--jpcs-orange);
+    opacity: 0.45;
+}
+
+.geo-outline {
+    position: absolute;
+    border: 2px solid rgba(245, 130, 32, 0.6);
+}
+
+.sq-1 { top: -80px; right: 50px; width: 200px; height: 200px; opacity: 0.3; }
+.sq-2 { top: 40px; right: -40px; width: 150px; height: 150px; }
+.sq-3 { top: 20px; right: 80px; width: 120px; height: 120px; }
+.sq-4 { top: 150px; right: -20px; width: 80px; height: 80px; }
+.sq-5 { top: 100px; right: 180px; width: 100px; height: 100px; }
+.sq-6 { bottom: -50px; right: 10%; width: 180px; height: 180px; opacity: 0.25; }
+.sq-7 { bottom: 80px; right: -30px; width: 130px; height: 130px; }
+.sq-8 { top: 5%; left: -80px; width: 220px; height: 220px; opacity: 0.25; }
+.sq-9 { top: 15%; left: 60px; width: 120px; height: 120px; }
+.sq-10 { bottom: 15%; left: -40px; width: 160px; height: 160px; }
+.sq-11 { bottom: 8%; left: 100px; width: 90px; height: 90px; }
+.sq-12 { top: 25%; left: -20px; width: 70px; height: 70px; }
+.sq-13 { bottom: -20px; left: 20px; width: 200px; height: 200px; }
+
+/* Customized scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--jpcs-orange); 
+    border-radius: 10px;
+    border: 3px solid #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--jpcs-blue); 
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--jpcs-orange) #f1f1f1;
+}

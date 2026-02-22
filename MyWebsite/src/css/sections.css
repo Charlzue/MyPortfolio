@@ -1,0 +1,123 @@
+/* --- Header & Card Section --- */
+.charl-card {
+    padding: 40px !important; 
+    border-left: 6px solid var(--jpcs-orange); 
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+.toph-section {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 5%;
+}
+
+.toph-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+}
+
+.toph-portrait {
+    max-width: 450px;
+    width: 100%;
+    filter: drop-shadow(30px 30px 50px rgba(245, 130, 32, 0.15));
+}
+
+.main-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--jpcs-blue);
+}
+
+.sub-title {
+    font-size: 1.8rem;
+    color: var(--jpcs-maroon);
+    margin: 15px 0;
+}
+
+.details-section {
+    padding: 60px 0;
+}
+
+.section-label {
+    border-left: 6px solid var(--jpcs-orange);
+    padding-left: 15px;
+    font-weight: 700;
+    color: var(--jpcs-blue);
+    margin-bottom: 35px;
+}
+
+.collage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-flow: dense;
+    gap: 20px;
+    align-items: start; 
+}
+
+.collage-grid img {
+    width: 100%;
+    height: auto; 
+    object-fit: contain; 
+    background: #f8f9fa; 
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.ratio-16-9 { 
+    grid-column: span 2; 
+    aspect-ratio: 16 / 9;
+}
+
+.ratio-2-1 { 
+    grid-column: span 2; 
+    aspect-ratio: 2 / 1;
+}
+
+.ratio-3-2 { 
+    aspect-ratio: 3 / 2;
+}
+
+.ratio-4-3 { 
+    aspect-ratio: 4 / 3;
+}
+
+.ratio-3-4 { 
+    grid-row: span 1; 
+    aspect-ratio: 3 / 4;
+}
+
+.ratio-4-5 { 
+    grid-row: span 1; 
+    aspect-ratio: 4 / 5;
+}
+
+@media (max-width: 1024px) {
+    .toph-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .toph-portrait {
+        max-width: 300px; 
+        margin: 0 auto;
+    }
+
+    .main-title { font-size: 3rem; }
+    
+    .toph-socials { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+    .collage-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .ratio-16-9, .ratio-2-1 { grid-column: span 2; }
+}
