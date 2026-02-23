@@ -4,6 +4,7 @@ import { supabase } from '../supabaseClient';
 export default function FreedomWall() {
     const [notes, setNotes] = useState([]);
     const [textInput, setTextInput] = useState('');
+    const [authorName, setAuthorName] = useState('');
     const [noteColor, setNoteColor] = useState('#fff9c4'); 
 
     const colorChoices = ['#fff9c4', '#ffcdd2', '#c8e6c9', '#bbdefb', '#e1bee7'];
@@ -29,6 +30,8 @@ export default function FreedomWall() {
         e.preventDefault();
         if (!textInput.trim()) return;
 
+        const finalName = authorName.trim() ? authorName : 'Anonymous';
+
         const { error } = await supabase
             .from('freedom_wall')
             .insert([{ content: textInput, color: noteColor }]);
@@ -49,6 +52,13 @@ export default function FreedomWall() {
                     <div className="toph-card">
                         <h4>Leave a Note!</h4>
                         <form onSubmit={saveNote}>
+                            <input 
+                                type="text" 
+                                className="form-control mb-2" 
+                                placeholder="Your Name (optional)"
+                                value={authorName}
+                                onChange={(e) => setAuthorName(e.target.value)}
+                            />
                             <textarea 
                                 className="form-control mb-3" 
                                 rows="4" 
@@ -88,10 +98,16 @@ export default function FreedomWall() {
                                     borderRadius: '8px',
                                     width: '200px',
                                     minHeight: '200px',
-                                    boxShadow: '3px 3px 10px rgba(0,0,0,0.1)'
+                                    boxShadow: '3px 3px 10px rgba(0,0,0,0.1)',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'space-between'
                                 }}
                             >
-                                <p style={{ margin: 0, fontWeight: '500' }}>{note.content}</p>
+                                <p style={{ margin: 0, fontWeight: '500', wordWrap: 'break-word' }}>{note.content}</p>
+                                <small style={{ marginTop: '15px', color: '#555', fontStyle: 'italic', alignSelf: 'flex-end' }}>
+                                    - {note.author_name || 'Anonymous'}
+                                </small>
                             </div>
                         ))}
                     </div>
