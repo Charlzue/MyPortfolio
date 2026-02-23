@@ -42,7 +42,7 @@ export default function Header() {
                     <p className="description">
                         I am eager to connect with like-minded professionals to explore tech leadership opportunities, a journey I am proud to share alongside my fiancé, Angelo Laus.
                     </p>
-                    <div className="toph-socials">
+                    <div className="toph-socials d-flex flex-wrap gap-3">
                         <a href="https://www.linkedin.com/in/charlchristopher/" target="_blank" rel="noreferrer" className="btn btn-dark btn-sm">LinkedIn</a>
                         <a href="https://www.facebook.com/profile.php?id=61564078963901" target="_blank" rel="noreferrer" className="btn btn-dark btn-sm">Facebook</a>
                         <a href="https://www.instagram.com/charl_christopher/" target="_blank" rel="noreferrer" className="btn btn-dark btn-sm">Instagram</a>
