@@ -34,10 +34,11 @@ export default function FreedomWall() {
 
         const { error } = await supabase
             .from('freedom_wall')
-            .insert([{ content: textInput, color: noteColor }]);
+            .insert([{ content: textInput, color: noteColor, author_name: finalName }]);
 
         if (!error) {
             setTextInput('');
+            setAuthorName('');
             getNotes(); 
         } else {
             alert('Something went wrong.');
