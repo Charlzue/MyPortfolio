@@ -1,1 +1,29 @@
-function App() { return <div>Hello Toph</div>; } export default App;
+import Background from './components/Background';
+import Navbar from './components/Navbar';
+import Header from './components/Header';
+import Education from './components/Education';
+import Experience from './components/Experience';
+import Organizations from './components/Organizations';
+import Hobbies from './components/Hobbies';
+import Goals from './components/Goals';
+import Gallery from './components/Gallery';
+import Footer from './components/Footer';
+
+export default function App() {
+    return (
+        <>
+            <Background />
+            <Navbar />
+            <Header />
+            <main className="container">
+                <Education />
+                <Experience />
+                <Organizations />
+                <Hobbies />
+                <Goals />
+                <Gallery />
+            </main>
+            <Footer />
+        </>
+    );
+}
