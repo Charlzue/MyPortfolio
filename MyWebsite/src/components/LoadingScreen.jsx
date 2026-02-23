@@ -15,7 +15,7 @@ export default function LoadingScreen() {
             // Show it, and save the new visit time
             localStorage.setItem('visitTime', timeNow);
             // Hide it after 3 seconds
-            setTimeout(() => setShowLoad(false), 3000);
+            setTimeout(() => setShowLoad(false), 5000);
         } else {
             // Hide it immediately if it hasn't been 5 minutes
             setShowLoad(false);
@@ -24,8 +24,15 @@ export default function LoadingScreen() {
 
     if (showLoad) {
         return (
-            <div style={{ position: 'fixed', inset: 0, background: '#fdfdfd', zIndex: 9999, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <h1 style={{ color: '#f58220', fontWeight: 'bold' }}>Loading Toph's Portfolio...</h1>
+            <div style={{ position: 'fixed', inset: 0, background: '#fdfdfd', zIndex: 9999, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ fontSize: '4rem', animation: 'spin 2s linear infinite' }}>⏳</div>
+                <style>{`
+                    @keyframes spin { 
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); } 
+                    }
+                `}</style>
+                <h1 style={{ color: '#f58220', fontWeight: 'bold', marginTop: '20px' }}>Loading Toph's Portfolio...</h1>
             </div>
         );
     }
