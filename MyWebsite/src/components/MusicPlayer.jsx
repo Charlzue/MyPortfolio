@@ -5,16 +5,15 @@ export default function MusicPlayer() {
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
     const [volume, setVolume] = useState(0.5);
+    const [showHint, setShowHint] = useState(false);
     const audioRef = useRef(null);
 
-    // Song playlist
     const songs = [
         { title: "Tiramisu", file: "tiramisu.mp3", image: "tiramisu.png" },
         { title: "Dreamy Mode", file: "dreamymode.mp3", image: "dreamymode.png" },
         { title: "Honey Jam", file: "honeyjam.mp3", image: "honeyjam.png" }
     ];
 
-    // Play or pause the current song
     const togglePlay = () => {
         if (isPlaying) {
             audioRef.current.pause();
@@ -24,13 +23,12 @@ export default function MusicPlayer() {
         setIsPlaying(!isPlaying);
     };
 
-    // Pick a new song from the list
     const selectSong = (index) => {
         setCurrentSongIndex(index);
         setIsPlaying(true);
     };
 
-    // Watch for song changes to auto-play the new track
+    // Auto-play when changing songs
     useEffect(() => {
         if (audioRef.current) {
             audioRef.current.volume = volume;
@@ -40,17 +38,32 @@ export default function MusicPlayer() {
         }
     }, [currentSongIndex]);
 
-    // Volume slider changes
+    // Handle volume slider
     useEffect(() => {
         if (audioRef.current) {
             audioRef.current.volume = volume;
         }
     }, [volume]);
 
+    // Pop-up music player hint timer
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsOpen((currentMenuState) => {
+                // Only show hint if the menu is currently closed
+                if (!currentMenuState) {
+                    setShowHint(true);
+                    setTimeout(() => setShowHint(false), 3000);
+                }
+                return currentMenuState;
+            });
+        }, 10000);
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div style={{ position: 'fixed', bottom: '20px', left: '20px', zIndex: 1000, display: 'flex', flexDirection: 'column', gap: '15px' }}>
             
-            {/* Hidden audio player */}
             <audio 
                 ref={audioRef} 
                 src={`/assets/audio/${songs[currentSongIndex].file}`} 
@@ -58,7 +71,7 @@ export default function MusicPlayer() {
                 onEnded={() => setIsPlaying(false)}
             />
 
-            {/* Pop-up music menu */}
+            {/* The pop-up music menu */}
             {isOpen && (
                 <div className="toph-card shadow-lg" style={{ padding: '20px', width: '280px', margin: 0 }}>
                     <div className="d-flex align-items-center gap-3 mb-3">
@@ -73,12 +86,10 @@ export default function MusicPlayer() {
                         </div>
                     </div>
 
-                    {/* Play/Pause Button */}
                     <button onClick={togglePlay} className="btn btn-dark w-100 mb-3" style={{ fontWeight: 'bold', borderRadius: '8px' }}>
-                        {isPlaying ? 'Pause' : 'Play'}
+                        {isPlaying ? '⏸️ Pause' : '▶️ Play'}
                     </button>
 
-                    {/* Volume Slider */}
                     <div className="d-flex align-items-center gap-2 mb-3">
                         <span style={{ fontSize: '1.2rem' }}>🔉</span>
                         <input 
@@ -94,7 +105,6 @@ export default function MusicPlayer() {
 
                     <hr style={{ borderColor: '#ddd' }} />
 
-                    {/* Playlist */}
                     <p style={{ margin: '0 0 10px 0', fontSize: '0.9rem', fontWeight: 'bold', color: '#f58220' }}>Up Next</p>
                     <div className="d-flex flex-column gap-2">
                         {songs.map((song, index) => (
@@ -123,9 +133,44 @@ export default function MusicPlayer() {
                 </div>
             )}
 
-            {/* Floating toggle button */}
+            {/* Music player hint animation */}
+            <div style={{
+                position: 'absolute',
+                bottom: '75px',
+                left: '0',
+                backgroundColor: '#a03b29',
+                color: 'white',
+                padding: '8px 14px',
+                borderRadius: '8px',
+                fontSize: '0.85rem',
+                fontWeight: 'bold',
+                whiteSpace: 'nowrap',
+                opacity: showHint ? 1 : 0,
+                transform: showHint ? 'translateY(0)' : 'translateY(10px)',
+                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                pointerEvents: 'none',
+                boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+            }}>
+                🎵 Play some music!
+                {}
+                <div style={{
+                    position: 'absolute',
+                    bottom: '-6px',
+                    left: '20px',
+                    width: '0',
+                    height: '0',
+                    borderLeft: '6px solid transparent',
+                    borderRight: '6px solid transparent',
+                    borderTop: '6px solid #a03b29'
+                }} />
+            </div>
+
+            {/* The floating toggle button */}
             <button 
-                onClick={() => setIsOpen(!isOpen)} 
+                onClick={() => {
+                    setIsOpen(!isOpen);
+                    setShowHint(false); // Hide hint immediately if they click the button
+                }} 
                 className="btn btn-dark rounded-circle shadow-lg"
                 style={{ 
                     width: '60px', 
