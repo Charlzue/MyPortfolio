@@ -1,3 +1,4 @@
+import FreedomWall from './components/FreedomWall';
 import LoadingScreen from './components/LoadingScreen';
 import Background from './components/Background';
 import Navbar from './components/Navbar';
@@ -23,6 +24,7 @@ export default function App() {
                 <Organizations />
                 <Hobbies />
                 <Goals />
+                <FreedomWall />
                 <Gallery />
             </main>
             <Footer />
