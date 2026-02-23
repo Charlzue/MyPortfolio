@@ -15,7 +15,7 @@ export default function LoadingScreen() {
             // Show it, and save the new visit time
             localStorage.setItem('visitTime', timeNow);
             // Hide it after 20 seconds
-            setTimeout(() => setShowLoad(false), 20000);
+            setTimeout(() => setShowLoad(false), 300000);
         } else {
             // Hide it immediately if it hasn't been 5 minutes
             setShowLoad(false);
