@@ -51,11 +51,11 @@ export default function Experience() {
                         
                         <h6 className="text-secondary tracking-wider small text-uppercase mb-2">Languages</h6>
                         <div className="d-flex flex-wrap mb-3">
-                            <span className={skillItemStyle}><i className="fi fi-brands-python fs-5"></i> Python</span>
-                            <span className={skillItemStyle}><i className="fi fi-brands-js fs-5"></i> JavaScript</span>
-                            <span className={skillItemStyle}><i className="fi fi-sr-sql-server fs-5"></i> SQL</span>
-                            <span className={skillItemStyle}><i className="fi fi-ss-html-file fs-5"></i> HTML</span>
-                            <span className={skillItemStyle}><i className="fi fi-ss-file-css fs-5"></i> CSS</span>
+                            <span className={skillItemStyle}><img src="/assets/img/python.png" alt="Python" style={iconStyle} /> Python</span>
+                            <span className={skillItemStyle}><img src="/assets/img/javascript.png" alt="JavaScript" style={iconStyle} /> JavaScript</span>
+                            <span className={skillItemStyle}><img src="/assets/img/sql.png" alt="SQL" style={iconStyle} /> SQL</span>
+                            <span className={skillItemStyle}><img src="/assets/img/html.png" alt="HTML" style={iconStyle} /> HTML</span>
+                            <span className={skillItemStyle}><img src="/assets/img/css.png" alt="CSS" style={iconStyle} /> CSS</span>
                         </div>
                         
                         <h6 className="text-secondary tracking-wider small text-uppercase mb-2">Databases</h6>
