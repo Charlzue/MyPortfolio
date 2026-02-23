@@ -75,7 +75,7 @@ export default function MusicPlayer() {
 
                     {/* Play/Pause Button */}
                     <button onClick={togglePlay} className="btn btn-dark w-100 mb-3" style={{ fontWeight: 'bold', borderRadius: '8px' }}>
-                        {isPlaying ? '⏸️ Pause' : '▶️ Play'}
+                        {isPlaying ? 'Pause' : 'Play'}
                     </button>
 
                     {/* Volume Slider */}
