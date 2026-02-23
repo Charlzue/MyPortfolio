@@ -22,7 +22,18 @@ export default function Education() {
     return (
         <section id="education" className="details-section">
             <h3 className="section-label">🎓 Education</h3>
-            <div className="toph-card text-center mx-auto" style={{ maxWidth: "600px" }}>
+
+            <style>{`
+                @keyframes fadeSlideIn {
+                    from { opacity: 0; transform: translateY(15px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .animate-card {
+                    animation: fadeSlideIn 0.4s ease-out forwards;
+                }
+            `}</style>
+            
+            <div key={activeSchool.level} className="toph-card text-center mx-auto animate-card" style={{ maxWidth: "600px" }}>
                 <img 
                     src={`/assets/img/${activeSchool.image}`} 
                     alt={activeSchool.name} 
