@@ -1,3 +1,4 @@
+import LoadingScreen from './components/LoadingScreen';
 import Background from './components/Background';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
@@ -12,6 +13,7 @@ import Footer from './components/Footer';
 export default function App() {
     return (
         <>
+            <LoadingScreen />
             <Background />
             <Navbar />
             <Header />
