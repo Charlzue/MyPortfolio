@@ -1,3 +1,4 @@
+import MusicPlayer from './components/MusicPlayer';
 import FreedomWall from './components/FreedomWall';
 import LoadingScreen from './components/LoadingScreen';
 import Background from './components/Background';
@@ -16,6 +17,7 @@ export default function App() {
         <>
             <LoadingScreen />
             <Background />
+            <MusicPlayer />
             <Navbar />
             <Header />
             <main className="container">
