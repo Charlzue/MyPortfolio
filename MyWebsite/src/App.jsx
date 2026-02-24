@@ -28,8 +28,8 @@ export default function App() {
                 <Organizations />
                 <Hobbies />
                 <Goals />
-                <FreedomWall />
                 <Gallery />
+                <FreedomWall />
             </main>
             <Footer />
         </>

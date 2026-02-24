@@ -194,3 +194,32 @@ body {
 [data-bs-theme="dark"] .navbar-brand span {
     color: #ffffff !important;
 }
+
+.gallery-track {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-bottom: 15px; 
+    scroll-behavior: auto; 
+}
+
+.gallery-track::-webkit-scrollbar {
+    display: none;
+}
+.gallery-track {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+.gallery-item {
+    height: 350px;
+    width: auto; 
+    object-fit: cover;
+    flex-shrink: 0; 
+    cursor: zoom-in;
+    transition: filter 0.3s ease;
+}
+
+.gallery-track:hover .gallery-item:not(:hover) {
+    filter: brightness(0.7);
+}
