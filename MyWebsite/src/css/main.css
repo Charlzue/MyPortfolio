@@ -116,3 +116,10 @@ body {
 [data-bs-theme="dark"] .collage-grid img {
     background: #2a2a2a;
 }
+
+.toph-socials .btn-dark {
+    background-color: var(--jpcs-blue) !important;
+    border-color: var(--jpcs-blue) !important;
+    border-radius: 20px;
+    padding: 6px 20px;
+}
