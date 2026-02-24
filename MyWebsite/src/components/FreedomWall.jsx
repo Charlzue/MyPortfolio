@@ -109,7 +109,7 @@ export default function FreedomWall() {
                                 {}
                                 <p style={{ margin: 0, fontWeight: '500', wordWrap: 'break-word', color: '#222' }}>{note.content}</p>
                                 
-                                {}
+                                {}  
                                 <small style={{ marginTop: '15px', color: '#444', fontStyle: 'italic', alignSelf: 'flex-end' }}>
                                     - {note.author_name || 'Anonymous'}
                                 </small>

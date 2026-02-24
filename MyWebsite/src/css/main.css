@@ -111,6 +111,16 @@ body {
 
 [data-bs-theme="dark"] .charl-card {
     background: rgba(30, 30, 30, 0.95);
+    border-left: 6px solid var(--jpcs-blue) !important;
+}
+
+[data-bs-theme="dark"] .charl-card .main-title,
+[data-bs-theme="dark"] .charl-card .accent-orange {
+    color: #82aaff !important; 
+}
+
+[data-bs-theme="dark"] .charl-card .sub-title {
+    color: #ff8a80 !important;
 }
 
 [data-bs-theme="dark"] .collage-grid img {
