@@ -4,12 +4,12 @@ export default function Hobbies() {
     const [selectedImage, setSelectedImage] = useState(null);
 
     const myHobbies = [
-        { name: "📢 Student Leadership", image: "leadership.jpg" },
-        { name: "🤝 Events Volunteering", image: "volunteering.jpg" },
-        { name: "💻 Tech & Leadership Events", image: "techevents.jpg" },
-        { name: "👕 Thrifting", image: "thrifting.jpg" },
-        { name: "🎬 Movies & Series", image: "movies.jpg" },
-        { name: "🚶 Walking", image: "walk.jpg" }
+        { name: "Student Leadership", image: "leadership.jpg" },
+        { name: "Events Volunteering", image: "volunteering.jpg" },
+        { name: "Tech & Leadership Events", image: "techevents.jpg" },
+        { name: "Thrifting", image: "thrifting.jpg" },
+        { name: "Movies & Series", image: "movies.jpg" },
+        { name: "Walking", image: "walk.jpg" }
     ];
 
     return (

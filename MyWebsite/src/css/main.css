@@ -77,6 +77,26 @@ body {
 * {
     scrollbar-width: thin;
     scrollbar-color: var(--jpcs-orange) #f1f1f1;
+
+}
+
+.goal-tile {
+    background-color: #ffffff;
+    color: #222222;
+    border: 1px solid #eeeeee;
+    border-left: 4px solid var(--jpcs-orange);
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    cursor: default;
+    border-radius: 6px; 
+}
+
+.goal-tile:hover {
+    transform: translateX(8px);
+    background-color: #fcfcfc;
+    border-left-color: var(--jpcs-blue);
+    box-shadow: -4px 4px 15px rgba(0,0,0,0.08);
 }
 
 [data-bs-theme="dark"] body {
@@ -150,7 +170,19 @@ body {
 [data-bs-theme="dark"] .goal-tile {
     background-color: #2a2a2a !important;
     color: #e0e0e0 !important;
-    border: 1px solid #444 !important; 
+    border: 1px solid #444 !important;
+    border-left: 4px solid var(--jpcs-orange) !important;
+    padding: 15px 20px !important; 
+    margin-bottom: 15px; 
+    transition: all 0.3s ease !important; 
+    cursor: default;
+}
+
+[data-bs-theme="dark"] .goal-tile:hover {
+    transform: translateX(8px); 
+    background-color: #333 !important; 
+    border-left-color: #82aaff !important; 
+    box-shadow: -4px 4px 15px rgba(0,0,0,0.4);
 }
 
 [data-bs-theme="dark"] .category-title {
