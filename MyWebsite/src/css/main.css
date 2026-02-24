@@ -156,3 +156,9 @@ body {
 [data-bs-theme="dark"] .category-title {
     color: #ffffff !important;
 }
+
+[data-bs-theme="dark"] .navbar-brand,
+[data-bs-theme="dark"] .navbar-brand strong,
+[data-bs-theme="dark"] .navbar-brand span {
+    color: #ffffff !important;
+}
