@@ -102,11 +102,15 @@ export default function FreedomWall() {
                                     boxShadow: '3px 3px 10px rgba(0,0,0,0.1)',
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    justifyContent: 'space-between'
+                                    justifyContent: 'space-between',
+                                    color: '#222'
                                 }}
                             >
-                                <p style={{ margin: 0, fontWeight: '500', wordWrap: 'break-word' }}>{note.content}</p>
-                                <small style={{ marginTop: '15px', color: '#555', fontStyle: 'italic', alignSelf: 'flex-end' }}>
+                                {}
+                                <p style={{ margin: 0, fontWeight: '500', wordWrap: 'break-word', color: '#222' }}>{note.content}</p>
+                                
+                                {}
+                                <small style={{ marginTop: '15px', color: '#444', fontStyle: 'italic', alignSelf: 'flex-end' }}>
                                     - {note.author_name || 'Anonymous'}
                                 </small>
                             </div>

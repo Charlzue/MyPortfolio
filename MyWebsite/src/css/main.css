@@ -123,3 +123,9 @@ body {
     border-radius: 20px;
     padding: 6px 20px;
 }
+
+[data-bs-theme="dark"] .bg-white,
+[data-bs-theme="dark"] .bg-light {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
