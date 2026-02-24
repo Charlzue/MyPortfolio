@@ -31,7 +31,7 @@ export default function DarkModeToggle() {
             className="btn btn-dark rounded-circle shadow-lg"
             style={{
                 position: 'fixed',
-                top: '20px',
+                top: '80px',
                 right: '20px',
                 zIndex: 1000,
                 width: '50px',
