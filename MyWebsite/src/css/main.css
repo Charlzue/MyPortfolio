@@ -102,7 +102,7 @@ body {
 
 [data-bs-theme="dark"] .accent-orange,
 [data-bs-theme="dark"] .section-label {
-    color: #f58220 !important;
+    color: #82aaff !important;
 }
 
 [data-bs-theme="dark"] .bg-graphics {
@@ -111,7 +111,7 @@ body {
 
 [data-bs-theme="dark"] .charl-card {
     background: rgba(30, 30, 30, 0.95);
-    border-left: 6px solid var(--jpcs-blue) !important;
+    border-left: 6px solid var(--jpcs-orange) !important;
 }
 
 [data-bs-theme="dark"] .charl-card .main-title,
@@ -138,4 +138,21 @@ body {
 [data-bs-theme="dark"] .bg-light {
     background-color: #2a2a2a !important;
     color: #e0e0e0 !important;
+
+}
+
+[data-bs-theme="dark"] .hobby-pill {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #444 !important; 
+}
+
+[data-bs-theme="dark"] .goal-tile {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #444 !important; 
+}
+
+[data-bs-theme="dark"] .category-title {
+    color: #ffffff !important;
 }
