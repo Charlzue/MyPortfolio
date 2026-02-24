@@ -104,3 +104,15 @@ body {
 [data-bs-theme="dark"] .section-label {
     color: #f58220 !important;
 }
+
+[data-bs-theme="dark"] .bg-graphics {
+    background: #121212;
+}
+
+[data-bs-theme="dark"] .charl-card {
+    background: rgba(30, 30, 30, 0.95);
+}
+
+[data-bs-theme="dark"] .collage-grid img {
+    background: #2a2a2a;
+}
