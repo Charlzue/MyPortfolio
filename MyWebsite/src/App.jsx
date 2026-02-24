@@ -1,3 +1,4 @@
+import DarkModeToggle from './components/DarkModeToggle';
 import MusicPlayer from './components/MusicPlayer';
 import FreedomWall from './components/FreedomWall';
 import LoadingScreen from './components/LoadingScreen';
@@ -17,6 +18,7 @@ export default function App() {
         <>
             <LoadingScreen />
             <Background />
+            <DarkModeToggle />
             <MusicPlayer />
             <Navbar />
             <Header />

@@ -78,3 +78,29 @@ body {
     scrollbar-width: thin;
     scrollbar-color: var(--jpcs-orange) #f1f1f1;
 }
+
+[data-bs-theme="dark"] body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] .toph-card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+[data-bs-theme="dark"] .toph-card h1,
+[data-bs-theme="dark"] .toph-card h2,
+[data-bs-theme="dark"] .toph-card h3,
+[data-bs-theme="dark"] .toph-card h4,
+[data-bs-theme="dark"] .toph-card h5,
+[data-bs-theme="dark"] .toph-card h6 {
+    color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .accent-orange,
+[data-bs-theme="dark"] .section-label {
+    color: #f58220 !important;
+}
